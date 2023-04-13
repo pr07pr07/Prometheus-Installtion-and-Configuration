@@ -24,8 +24,8 @@ Now, let's setup Prometheus and create a systemd service unit file to manage the
   ```
 - Copy the binaries:
   ```bash
-  sudo cp /home/opc/prometheus-2.40.1.linux-amd64/prometheus /usr/local/bin/
-  sudo cp /home/opc/prometheus-2.40.1.linux-amd64/promtool /usr/local/bin/
+  sudo cp /home/opc/prometheus-2.43.0.linux-amd64/prometheus /usr/local/bin/
+  sudo cp /home/opc/prometheus-2.43.0.linux-amd64/promtool /usr/local/bin/
   ```
 - Change the ownership of binaries:
   ```bash
@@ -34,8 +34,8 @@ Now, let's setup Prometheus and create a systemd service unit file to manage the
   ```
 - Copy the directories **consoles** and **console_libraries**:
   ```bash
-  cp -r /root/prometheus-2.40.1.linux-amd64/consoles /etc/prometheus
-  cp -r /root/prometheus-2.40.1.linux-amd64/console_libraries /etc/prometheus
+  cp -r /home/opc/prometheus-2.43.0.linux-amd64/consoles /etc/prometheus
+  cp -r /home/opc/prometheus-2.43.0.linux-amd64/console_libraries /etc/prometheus
   ```
   
   
