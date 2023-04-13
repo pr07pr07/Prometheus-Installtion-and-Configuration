@@ -12,6 +12,12 @@
   mkdir /var/lib/prometheus
   ```
 - Change the permissions
+  ```
+  chown prometheus:prometheus /etc/prometheus
+  chown prometheus:prometheus /var/lib/prometheus
+  ```
+  
+
 
 
 
