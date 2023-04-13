@@ -32,6 +32,11 @@ Now, let's setup Prometheus and create a systemd service unit file to manage the
   chown prometheus:prometheus /usr/local/bin/prometheus
   chown prometheus:prometheus /usr/local/bin/promtool
   ```
+- Copy the directories **consoles** and **console_libraries**:
+  ```bash
+  cp -r /root/prometheus-2.40.1.linux-amd64/consoles /etc/prometheus
+  cp -r /root/prometheus-2.40.1.linux-amd64/console_libraries /etc/prometheus
+  ```
   
   
 
