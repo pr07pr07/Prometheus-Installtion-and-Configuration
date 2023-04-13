@@ -133,6 +133,8 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   sudo systemctl status node_exporter
   ```
 ## Prometheus Configuration
+![image](https://user-images.githubusercontent.com/67961663/231858091-65676252-1232-40be-baf7-fcb6250191a3.png)
+
 
 
 
