@@ -125,4 +125,12 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   [Install]
   WantedBy=multi-user.target
   ```
+- Start and Enable the service:
+  ```bash 
+  sudo systemctl daemon-reload
+  sudo systemctl start node_exporter
+  sudo systemctl enable node_exporter
+  sudo systemctl status node_exporter
+  ```
+
 
