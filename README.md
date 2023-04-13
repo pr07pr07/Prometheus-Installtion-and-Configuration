@@ -88,7 +88,7 @@ Now, let's setup Prometheus and create a systemd service unit file to manage the
 Now, let's setup Node Exporter and create a systemd service unit file to manage the Node Exporter service by doing the steps below
 
 
-- Download Prometheus binaries from [URL](https://prometheus.io/download/)
+- Download Prometheus binaries from [URL](https://prometheus.io/download)
 -   ```bash
   wget https://github.com/prometheus/node_exporter/releases/download/v1.5.0/node_exporter-1.5.0.linux-amd64.tar.gz
   tar xvf node_exporter-1.5.0.linux-amd64.tar.gz
