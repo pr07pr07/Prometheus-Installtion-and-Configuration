@@ -2,9 +2,9 @@
 
 - Add Prometheus user as below
 
-  ```bash
+  `bash
   useradd --no-create-home --shell /bin/false prometheus
-  ```
+  `
 - Create Directories for storing prometheus config file and data
 
   ```bash
