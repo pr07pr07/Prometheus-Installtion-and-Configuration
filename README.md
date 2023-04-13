@@ -133,8 +133,22 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   sudo systemctl status node_exporter
   ```
 ## Prometheus Configuration
-![image](https://user-images.githubusercontent.com/67961663/231858091-65676252-1232-40be-baf7-fcb6250191a3.png)
+![image](https://user-images.githubusercontent.com/67961663/231862578-287c58d0-368c-4e6a-b506-a63a0f74842e.png)
 
+- Update or Modify the **/etc/prometheus/prometheus.yml** file to add a job called nodes to start scraping the one or even more node_exporters.
+  ```bash
+  vi /etc/prometheus/prometheus.yml
+  ```
+- Add below code under scrape_configs:
+  ```lines 
+   - job_name: "nodes"
+     static_configs:
+        - targets: ['node01:9100', 'node02:9100']
+  ```
+ - Make sure to restart the Prometheus service by using below command after changes if we are using static config changes.
+   ```bash
+   systemctl restart prometheus
+   ```
 
 
 
