@@ -75,11 +75,11 @@ ExecStart=/usr/local/bin/prometheus \
 WantedBy=multi-user.target
   ```
 - Run below commands:
-  ```
-systemctl daemon-reload
-systemctl start prometheus
-systemctl enable prometheus
-systemctl status prometheus
+  ```bash 
+  systemctl daemon-reload
+  systemctl start prometheus
+  systemctl enable prometheus
+  systemctl status prometheus
   ```
   
 
