@@ -99,12 +99,33 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   ```
 - Copy the binaries:
   ```bash
-  sudo cp /home/opc/node_exporter-1.5.0.linux-amd64/prometheus /usr/local/bin/node_exporter
+  sudo cp /home/opc/node_exporter-1.5.0.linux-amd64/node_exporter /usr/local/bin/
   ```
 - Change the ownership of binaries:
   ```bash
   sudo chown node_exporter:node_exporter /usr/local/bin/node_exporter
   ```
+- Create a service for **node_exporter**:
+  ```bash
+  sudo vi /etc/systemd/system/node_exporter.service
+  ```
+- Add below lines in it:
+  ```lines
+  [Unit]
+  Description=Node Exporter
+  Wants=network-online.target
+  After=network-online.target
+
+  [Service]
+  User=node_exporter
+  Group=node_exporter
+  Type=simple
+  ExecStart=/usr/local/bin/node_exporter
+
+  [Install]
+  WantedBy=multi-user.target
+  ```
+
 
 
   
