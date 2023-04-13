@@ -1,9 +1,9 @@
 ## Prometheus Installtion :
 
-- Follow below steps to download *Prometheus* and start its process:
+- Follow below steps to download Prometheus and start its process:
 
   ```bash
-  wget https://github.com/prometheus/prometheus/releases/download/v2.40.1/prometheus-2.40.1.linux-amd64.tar.gz
+  wget https://github.com/prometheus/prometheus/releases/download/v2.43.0/prometheus-2.43.0.linux-amd64.tar.gz
   tar xvf prometheus-2.40.1.linux-amd64.tar.gz
   cd prometheus-2.40.1.linux-amd64
   ./prometheus > /dev/null 2>&1 &
