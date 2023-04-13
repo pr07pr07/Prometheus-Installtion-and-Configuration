@@ -2,12 +2,12 @@
 
 - Add Prometheus user as below
 
-  ``commands
+  ```bash
   useradd --no-create-home --shell /bin/false prometheus
-  ``
+  ```
 - Create Directories for storing prometheus config file and data
 
-  ```commands
+  ```bash
   mkdir /etc/prometheus
   mkdir /var/lib/prometheus
   ```
