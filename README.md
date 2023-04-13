@@ -1,6 +1,7 @@
 # Prometheus Installtion
 
- Now, let's setup Prometheus and create a systemd service unit file to manage the Prometheus service by doing the steps below:
+Now, let's setup Prometheus and create a systemd service unit file to manage the Prometheus service by doing the steps below
+
 
 - Follow below steps to download Prometheus and extract the same
 
