@@ -84,7 +84,7 @@ Now, let's setup Prometheus and create a systemd service unit file to manage the
   sudo systemctl status prometheus
   ```
 
-## Node Exporter installation systemd on single or multiple nodes
+## Node Exporter installation systemd
 Now, let's setup Node Exporter and create a systemd service unit file to manage the Node Exporter service by doing the steps below
 
 
