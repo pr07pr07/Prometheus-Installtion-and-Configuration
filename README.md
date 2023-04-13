@@ -55,24 +55,24 @@ Now, let's setup Prometheus and create a systemd service unit file to manage the
   vi /etc/systemd/system/prometheus.service
   ```
 - Add below lines in it:
-  ```bash
-[Unit]
-Description=Prometheus
-Wants=network-online.target
-After=network-online.target
+  ```lines
+  [Unit]
+  Description=Prometheus
+  Wants=network-online.target
+  After=network-online.target
 
-[Service]
-User=prometheus
-Group=prometheus
-Type=simple
-ExecStart=/usr/local/bin/prometheus \
+  [Service]
+  User=prometheus
+  Group=prometheus
+  Type=simple
+  ExecStart=/usr/local/bin/prometheus \
     --config.file /etc/prometheus/prometheus.yml \
     --storage.tsdb.path /var/lib/prometheus/ \
     --web.console.templates=/etc/prometheus/consoles \
     --web.console.libraries=/etc/prometheus/console_libraries
 
-[Install]
-WantedBy=multi-user.target
+  [Install]
+  WantedBy=multi-user.target
   ```
 - Start and Enable the service:
   ```bash 
