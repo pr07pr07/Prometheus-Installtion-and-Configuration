@@ -1,14 +1,14 @@
-## Prometheus Installtion :
+# Prometheus Installtion
 
-- Follow below steps to download Prometheus and start its process:
+Now, let's set up Prometheus and create a systemd service unit file to manage the Prometheus service. Once done, start and enable the service.
+
+- Follow below steps to download Prometheus:
 
   ```bash
   wget https://github.com/prometheus/prometheus/releases/download/v2.43.0/prometheus-2.43.0.linux-amd64.tar.gz
   tar xvf prometheus-2.40.1.linux-amd64.tar.gz
-  cd prometheus-2.40.1.linux-amd64
-  ./prometheus > /dev/null 2>&1 &
   ```
-
+- 
 - Add Prometheus user as below
 
   ```bash
