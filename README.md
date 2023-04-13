@@ -11,6 +11,8 @@
   mkdir /etc/prometheus
   mkdir /var/lib/prometheus
   ```
+-- Change the permissions:
+
 
 
 
