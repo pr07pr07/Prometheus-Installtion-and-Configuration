@@ -1,4 +1,4 @@
-# Prometheus Installtion and Configuration:
+# Prometheus Installtion :
 
 #### Add Prometheus user as below:
 
