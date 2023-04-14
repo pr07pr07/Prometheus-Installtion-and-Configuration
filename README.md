@@ -222,6 +222,24 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   curl -u prometheus:secret-password http://hostname:9100/metrics
   curl -u prometheus:secret-password http://hostname:9100/metrics
   ```
+- Now, let's configure the **Prometheus** server to use **authentication** when scraping **metrics** from **node** servers.
+
+- Edit the Prometheus configuration file
+  ```bash
+  vi /etc/prometheus/prometheus.yml
+  ```
+- Under **- job_name: "nodes"** add below lines:
+  ```bash
+  basic_auth:
+  username: prometheus
+  password: secret-passwor
+  ```
+- Restart **prometheus** service:
+  ```bash
+  systemctl restart prometheus
+  ```
+
+
 
 
 
