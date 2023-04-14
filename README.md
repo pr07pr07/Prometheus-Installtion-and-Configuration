@@ -160,7 +160,7 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   sudo touch /etc/node_exporter/config.yml
   sudo chmod 700 /etc/node_exporter
   sudo chmod 600 /etc/node_exporter/config.yml
-  sudo chown -R nodeusr:nodeusr /etc/node_exporter
+  sudo chown -R node_exporter:node_exporter /etc/node_exporter
   ```
 - Edit **node_exporter** service
   ```bash
