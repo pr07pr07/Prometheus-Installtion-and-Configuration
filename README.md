@@ -251,8 +251,8 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   ```
 - Change ownership:
   ```bash
-  sudo chown nodeusr.nodeusr /etc/node_exporter/node_exporter.key
-  sudo chown nodeusr.nodeusr /etc/node_exporter/node_exporter.crt
+  sudo chown node_exporter.node_exporter /etc/node_exporter/node_exporter.key
+  sudo chown node_exporter.node_exporter /etc/node_exporter/node_exporter.crt
   ```
 - Edit **/etc/node_exporter/config.yml** file:
   ```bash
