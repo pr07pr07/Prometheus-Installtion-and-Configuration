@@ -288,7 +288,7 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   ```bash
  sudo vi /etc/prometheus/prometheus.yml
   ```
-- Add below given lines under **- job_name: "nodes"**
+- Add below given lines under **- job_name: "nodes"**.
   ```bash
   scheme: https
     tls_config:
