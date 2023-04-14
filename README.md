@@ -181,6 +181,8 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   ```
 - Follow same steps for other nodes if any
 
+## Configure Prometheus and Node servers to use authentication to communicate
+
 
 
 
