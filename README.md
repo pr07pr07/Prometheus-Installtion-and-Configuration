@@ -186,8 +186,7 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
 
 - Install **apache2-utils** package
   ```bash
-  sudo apt update
-  sudo apt install apache2-utils -y
+  sudo yum install httpd-tools -y
   ```
 - Generate password hash:
   ```bash
