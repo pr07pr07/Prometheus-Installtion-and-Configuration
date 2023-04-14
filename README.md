@@ -147,7 +147,7 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   ```
  - Make sure to restart the Prometheus service by using below command after changes if we are using static config changes.
    ```bash
-   systemctl restart prometheus
+   sudo systemctl restart prometheus
    ```
    
 ## Authentication/Encryption
@@ -156,15 +156,15 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
 - SSH to node_exporter nodes:
 - Create the config:
   ```bash
-  mkdir /etc/node_exporter/
-  touch /etc/node_exporter/config.yml
-  chmod 700 /etc/node_exporter
-  chmod 600 /etc/node_exporter/config.yml
-  chown -R nodeusr:nodeusr /etc/node_exporter
+  sudo mkdir /etc/node_exporter/
+  sudo touch /etc/node_exporter/config.yml
+  sudo chmod 700 /etc/node_exporter
+  sudo chmod 600 /etc/node_exporter/config.yml
+  sudo chown -R nodeusr:nodeusr /etc/node_exporter
   ```
 - Edit **node_exporter** service
   ```bash
-  vi /etc/systemd/system/node_exporter.service
+  sudo vi /etc/systemd/system/node_exporter.service
   ```
 - Change below line:
   ```bash
@@ -174,10 +174,9 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   ExecStart=/usr/local/bin/node_exporter --web.config=/etc/node_exporter/config.yml
   ```
 - Reload the daemon and Restart node_exporter service
-  ```
-  systemctl daemon-reload
-  systemctl restart node_exporter
-  exit
+  ```bash
+  sudo systemctl daemon-reload
+  sudo systemctl restart node_exporter
   ```
 - Follow same steps for other nodes if any
 
@@ -187,19 +186,20 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
 
 - Install **apache2-utils** package
   ```bash
-  apt update
-  apt install apache2-utils -y
+  sudo apt update
+  sudo apt install apache2-utils -y
   ```
 - Generate password hash:
   ```bash
-  htpasswd -nBC 10 "" | tr -d ':\n'; echo
+  sudo htpasswd -nBC 10 "" | tr -d ':\n'; echo
   ```
 - It will ask for the password twice as below (enter password **secret-password** twice)
 
 - Finally, you will get a hashed value of your password.
+
 - Edit /etc/node_exporter/config.yml file.
   ```bash
-  vi /etc/node_exporter/config.yml
+  sudo vi /etc/node_exporter/config.yml
   ```
 - Add below lines in it:
   ```bash
@@ -208,11 +208,11 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   ```
 - Restart **node_exporter** service
   ```bash
-  systemctl restart node_exporter
+  sudo systemctl restart node_exporter
   ```
 - You can verify the changes using curl command:
   ```bash
-  curl http://node01:9100/metrics
+  sudo curl http://node01:9100/metrics
   ```
 - return output should be **Unauthorized**
 
@@ -220,14 +220,14 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
 
 - Are you able to access the metrics using correct credentials now? Try using below given commands:
   ```bash
-  curl -u prometheus:secret-password http://hostname:9100/metrics
-  curl -u prometheus:secret-password http://hostname:9100/metrics
+  sudo curl -u prometheus:secret-password http://hostname:9100/metrics
+  sudo curl -u prometheus:secret-password http://hostname:9100/metrics
   ```
 - Now, let's configure the **Prometheus** server to use **authentication** when scraping **metrics** from **node** servers.
 
 - Edit the Prometheus configuration file
   ```bash
-  vi /etc/prometheus/prometheus.yml
+  sudo vi /etc/prometheus/prometheus.yml
   ```
 - Under **- job_name: "nodes"** add below lines:
   ```bash
@@ -237,7 +237,7 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   ```
 - Restart **prometheus** service:
   ```bash
-  systemctl restart prometheus
+  sudo systemctl restart prometheus
   ```
 ## Configure node exporter to use TLS for Encryption
 - SSH to **node_exporter** nodes
@@ -248,16 +248,16 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   ```
 - Move the **crt** and **key** file under **/etc/node_exporter/** directory
   ```bash
-  mv node_exporter.crt node_exporter.key /etc/node_exporter/
+  sudo mv node_exporter.crt node_exporter.key /etc/node_exporter/
   ```
 - Change ownership:
   ```bash
-  chown nodeusr.nodeusr /etc/node_exporter/node_exporter.key
-  chown nodeusr.nodeusr /etc/node_exporter/node_exporter.crt
+  sudo chown nodeusr.nodeusr /etc/node_exporter/node_exporter.key
+  sudo chown nodeusr.nodeusr /etc/node_exporter/node_exporter.crt
   ```
 - Edit **/etc/node_exporter/config.yml** file:
   ```bash
-  vi /etc/node_exporter/config.yml
+  sudo vi /etc/node_exporter/config.yml
   ```
 - Add below lines in this file:
   ```lines
@@ -267,11 +267,11 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   ```
 - Restart node exporter service
   ```bash
-  systemctl restart node_exporter
+  sudo systemctl restart node_exporter
   ```
 - You can verify your changes using **curl** command:
   ```bash
-  curl -u prometheus:secret-password -k https://node01:9100/metrics
+  sudo curl -u prometheus:secret-password -k https://node01:9100/metrics
   ```
 - Follow same steps for other nodes
 
@@ -279,15 +279,15 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
 
 - Copy the certificate from node01 to Prometheus server
   ```bash
-  scp root@node01:/etc/node_exporter/node_exporter.crt /etc/prometheus/node_exporter.crt
+  sudo scp root@node01:/etc/node_exporter/node_exporter.crt /etc/prometheus/node_exporter.crt
   ```
 - Change certificate file ownership
   ```bash
-  chown prometheus.prometheus /etc/prometheus/node_exporter.crt
+  sudo chown prometheus.prometheus /etc/prometheus/node_exporter.crt
   ```
 - Edit **/etc/prometheus/prometheus.yml** file
   ```bash
-  vi /etc/prometheus/prometheus.yml
+ sudo vi /etc/prometheus/prometheus.yml
   ```
 - Add below given lines under **- job_name: "nodes"**
   ```bash
@@ -298,7 +298,7 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   ```
 - Restart prometheus service
   ```bash
-  systemctl restart prometheus
+  sudo systemctl restart prometheus
   ```
   
   
