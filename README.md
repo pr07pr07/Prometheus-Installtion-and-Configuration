@@ -184,6 +184,7 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
 ## Configure Prometheus and Node servers to use authentication to communicate
 
 - SSH to **node_exporter** nodes
+
 - Install **apache2-utils** package
   ```bash
   apt update
@@ -238,6 +239,14 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   ```bash
   systemctl restart prometheus
   ```
+## Configure node exporter to use TLS for Encryption
+- SSH to **node_exporter** nodes
+
+- Generate the certificate and key
+  ```bash
+  openssl req -new -newkey rsa:2048 -days 365 -nodes -x509 -keyout node_exporter.key -out node_exporter.crt -subj   "/C=US/ST=California/L=Oakland/O=MyOrg/CN=localhost" -addext "subjectAltName = DNS:localhost"
+  ```
+  
 
 
 
