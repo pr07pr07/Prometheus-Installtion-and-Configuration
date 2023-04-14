@@ -261,8 +261,8 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
 - Add below lines in this file:
   ```lines
   tls_server_config:
-  cert_file: node_exporter.crt
-  key_file: node_exporter.key
+    cert_file: node_exporter.crt
+    key_file: node_exporter.key
   ```
 - Restart node exporter service
   ```bash
