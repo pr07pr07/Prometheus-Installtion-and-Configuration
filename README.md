@@ -149,6 +149,9 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
    ```bash
    systemctl restart prometheus
    ```
+   
+## Authentication/Encryption
+
 
 
 
