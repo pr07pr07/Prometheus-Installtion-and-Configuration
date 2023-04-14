@@ -153,6 +153,34 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
 ## Authentication/Encryption
 ![image](https://user-images.githubusercontent.com/67961663/231985459-2c17fb36-0c4c-4f18-ab28-04b5ef8dd22e.png)
 
+- SSH to node_exporter nodes:
+- Create the config:
+  ```bash
+  mkdir /etc/node_exporter/
+  touch /etc/node_exporter/config.yml
+  chmod 700 /etc/node_exporter
+  chmod 600 /etc/node_exporter/config.yml
+  chown -R nodeusr:nodeusr /etc/node_exporter
+  ```
+- Edit **node_exporter** service
+  ```bash
+  vi /etc/systemd/system/node_exporter.service
+  ```
+- Change below line:
+  ```bash
+  From
+  ExecStart=/usr/local/bin/node_exporter
+  To 
+  ExecStart=/usr/local/bin/node_exporter --web.config=/etc/node_exporter/config.yml
+  ```
+- Reload the daemon and Restart node_exporter service
+  ```
+  systemctl daemon-reload
+  systemctl restart node_exporter
+  exit
+  ```
+- Follow same steps for other nodes if any
+
 
 
 
