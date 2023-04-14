@@ -171,7 +171,7 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   From
   ExecStart=/usr/local/bin/node_exporter
   To 
-  ExecStart=/usr/local/bin/node_exporter --web.config=/etc/node_exporter/config.yml
+  ExecStart=/usr/local/bin/node_exporter --web.config.file=/etc/node_exporter/config.yml
   ```
 - Reload the daemon and Restart node_exporter service
   ```bash
