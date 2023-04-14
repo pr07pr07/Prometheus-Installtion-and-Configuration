@@ -214,7 +214,15 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
   curl http://node01:9100/metrics
   ```
 - return output should be **Unauthorized**
+
 - Note: Follow same steps for other nodes except generating the password hash, you should be able to use the same password hash for other nodes also.
+
+- Are you able to access the metrics using correct credentials now? Try using below given commands:
+  ```bash
+  curl -u prometheus:secret-password http://hostname:9100/metrics
+  curl -u prometheus:secret-password http://hostname:9100/metrics
+  ```
+
 
 
 
