@@ -231,8 +231,8 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
 - Under **- job_name: "nodes"** add below lines:
   ```bash
   basic_auth:
-  username: prometheus
-  password: secret-passwor
+      username: prometheus
+      password: secret-passwor
   ```
 - Restart **prometheus** service:
   ```bash
