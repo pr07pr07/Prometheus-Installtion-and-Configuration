@@ -278,7 +278,7 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
 
 - Copy the certificate from node01 to Prometheus server
   ```bash
-  sudo scp root@node01:/etc/node_exporter/node_exporter.crt /etc/prometheus/node_exporter.crt
+  sudo scp opc@node01:/etc/node_exporter/node_exporter.crt /etc/prometheus/node_exporter.crt
   ```
 - Change certificate file ownership
   ```bash
