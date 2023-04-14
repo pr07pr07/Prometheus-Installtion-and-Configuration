@@ -291,9 +291,9 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
 - Add below given lines under **- job_name: "nodes"**
   ```bash
   scheme: https
-    tls_config:
-      ca_file: /etc/prometheus/node_exporter.crt
-      insecure_skip_verify: true
+  tls_config:
+    ca_file: /etc/prometheus/node_exporter.crt
+    insecure_skip_verify: true
   ```
 - Restart prometheus service
   ```bash
