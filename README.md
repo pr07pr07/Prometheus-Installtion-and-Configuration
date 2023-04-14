@@ -203,7 +203,7 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
 - Add below lines in it:
   ```bash
   basic_auth_users:
-  prometheus: <hashed-password>
+      prometheus: <hashed-password>
   ```
 - Restart **node_exporter** service
   ```bash
