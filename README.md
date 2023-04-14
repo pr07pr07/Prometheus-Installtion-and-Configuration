@@ -151,8 +151,7 @@ Now, let's setup Node Exporter and create a systemd service unit file to manage 
    ```
    
 ## Authentication/Encryption
-
-
+![image](https://user-images.githubusercontent.com/67961663/231985459-2c17fb36-0c4c-4f18-ab28-04b5ef8dd22e.png)
 
 
 
