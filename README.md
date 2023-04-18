@@ -1,5 +1,11 @@
-# Prometheus Installtion and configurations
 
+# What is Prometheus ?
+- Prometheus is an open-source monitoring tool that collects metrics data, and provide tools to visualize the collected data.
+- In addition, Prometheus allows you to generate alerts when metrics reach a user specfied threshold.
+- Prometheus collects metrics by scraping targets who exapose metrics through an HTTP endpoint.
+- Scraped metrics are then stored in a time series database which can be queried using prometheus built-in query langguage PromQL
+
+# Prometheus Installtion and configurations
 ## Prometheus Installtion systemd
 
 Now, let's setup Prometheus and create a systemd service unit file to manage the Prometheus service by doing the steps below
